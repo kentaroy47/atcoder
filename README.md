@@ -1,2 +1,2 @@
-# atcoder
-Atcoder challenges
+# at-coder
+atcoder-stuff
