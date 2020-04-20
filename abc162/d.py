@@ -25,10 +25,18 @@ if N > 2:
         for jj,j in enumerate(data[ii+1:-1]):
             jj = jj+ii+1
             if i!=j:
-                for kk, k in enumerate(data[jj+1:]):
-                    kk = kk+jj + 1
-                    if i!=k and j!=k:
-                        if (jj-ii) != (kk-jj):
-                            out+=1
+                sum1 = 0                    
+                for d in np.asarray([d for d in "RGB"]):
+                    if i!=d and j!=d:
+                        #sum1 = np.sum(np.asarray([d for d in data[jj+1:]])==d)
+                        sum1 = 0
+                        for l in data[jj+1:]:
+                            if d == l:
+                                sum1 +=1
+                        let = d
+                out+=sum1
+                if jj+jj-ii<N:
+                    if data[jj+jj-ii]==let:                    
+                        out-=1
 print(out)
 
